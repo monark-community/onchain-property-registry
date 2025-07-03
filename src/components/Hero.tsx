@@ -1,20 +1,23 @@
 
 import { Button } from "@/components/ui/button";
 import { AlertTriangle, CheckCircle, Search, Users, Star, Home, Hammer, Key } from "lucide-react";
+import { useWallet } from "@/contexts/WalletContext";
 
 const Hero = () => {
+  const { connectWallet } = useWallet();
+
   return (
     <div className="bg-gradient-to-br from-background via-secondary/20 to-accent/30 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <div className="inline-flex items-center bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-medium mb-6">
             <AlertTriangle className="h-4 w-4 mr-2" />
             Stop getting surprised by hidden property issues
           </div>
           
           <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
             Know What You're Really
-            <span className="block text-accent">Getting Into</span>
+            <span className="block text-primary">Getting Into</span>
           </h1>
           
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
@@ -27,8 +30,8 @@ const Hero = () => {
               <Search className="h-5 w-5 mr-2" />
               Search Your Property
             </Button>
-            <Button size="lg" variant="outline">
-              Check Your Neighborhood
+            <Button size="lg" variant="outline" onClick={connectWallet}>
+              Connect Wallet
             </Button>
           </div>
 
