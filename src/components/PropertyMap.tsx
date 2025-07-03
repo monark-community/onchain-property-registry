@@ -49,114 +49,154 @@ const PropertyMap = () => {
     }
   ];
 
-  const getStatusColor = (status: string) => {
+  const getStatusVariant = (status: string) => {
     switch (status) {
-      case "verified": return "bg-green-100 text-green-800";
-      case "pending": return "bg-yellow-100 text-yellow-800";
-      case "flagged": return "bg-red-100 text-red-800";
-      default: return "bg-gray-100 text-gray-800";
+      case "verified": return "default";
+      case "pending": return "secondary";
+      case "flagged": return "destructive";
+      default: return "outline";
     }
   };
 
   return (
-    <div className="py-16 bg-gray-50" id="map">
+    <div className="py-20 bg-background" id="map">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Property Registry Map
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-foreground mb-6">
+            Explore Property Data
           </h2>
-          <p className="text-lg text-gray-600">
-            Explore property records and their histories across the community
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Search through verified property records and see real-time updates from the community
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Map Placeholder */}
-          <div className="lg:col-span-2">
-            <Card>
+        <div className="grid lg:grid-cols-5 gap-8">
+          {/* Modern Map Interface */}
+          <div className="lg:col-span-3">
+            <Card className="border-0 shadow-xl">
               <CardContent className="p-0">
-                <div className="h-96 bg-gradient-to-br from-blue-100 to-green-100 rounded-lg flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
+                <div className="h-[500px] bg-gradient-to-br from-muted/20 to-accent/10 rounded-lg flex items-center justify-center relative overflow-hidden">
+                  {/* Subtle grid pattern */}
+                  <div className="absolute inset-0 opacity-[0.02]">
+                    <div className="w-full h-full" 
+                         style={{
+                           backgroundImage: `
+                             linear-gradient(hsl(var(--foreground)) 1px, transparent 1px),
+                             linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)
+                           `,
+                           backgroundSize: '20px 20px'
+                         }}>
+                    </div>
+                  </div>
+                  
                   <div className="text-center z-10">
-                    <MapIcon className="h-16 w-16 text-blue-600 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                      Interactive Map
+                    <div className="bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6">
+                      <MapIcon className="h-8 w-8 text-primary" />
+                    </div>
+                    <h3 className="text-2xl font-semibold text-foreground mb-3">
+                      Interactive Property Browser
                     </h3>
-                    <p className="text-gray-600">
-                      Click on properties to view detailed records
+                    <p className="text-muted-foreground">
+                      Click on properties to explore their complete history
                     </p>
                   </div>
                   
-                  {/* Sample property markers */}
+                  {/* Modern property markers */}
                   <div 
-                    className="absolute top-20 left-32 w-4 h-4 bg-green-500 rounded-full cursor-pointer hover:scale-125 transition-transform"
+                    className="absolute top-24 left-32 w-3 h-3 bg-primary rounded-full cursor-pointer hover:scale-150 transition-all duration-200 shadow-lg"
                     onClick={() => setSelectedProperty(sampleProperties[0])}
-                  ></div>
+                  >
+                    <div className="absolute inset-0 bg-primary rounded-full animate-ping opacity-75"></div>
+                  </div>
                   <div 
-                    className="absolute top-32 right-40 w-4 h-4 bg-yellow-500 rounded-full cursor-pointer hover:scale-125 transition-transform"
+                    className="absolute top-40 right-40 w-3 h-3 bg-secondary rounded-full cursor-pointer hover:scale-150 transition-all duration-200 shadow-lg"
                     onClick={() => setSelectedProperty(sampleProperties[1])}
-                  ></div>
+                  >
+                    <div className="absolute inset-0 bg-secondary rounded-full animate-ping opacity-75"></div>
+                  </div>
                   <div 
-                    className="absolute bottom-24 left-48 w-4 h-4 bg-red-500 rounded-full cursor-pointer hover:scale-125 transition-transform"
+                    className="absolute bottom-32 left-48 w-3 h-3 bg-destructive rounded-full cursor-pointer hover:scale-150 transition-all duration-200 shadow-lg"
                     onClick={() => setSelectedProperty(sampleProperties[2])}
-                  ></div>
+                  >
+                    <div className="absolute inset-0 bg-destructive rounded-full animate-ping opacity-75"></div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
           </div>
 
           {/* Property Details Panel */}
-          <div>
+          <div className="lg:col-span-2">
             {selectedProperty ? (
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center justify-between">
-                    Property Details
-                    <Badge className={getStatusColor(selectedProperty.status)}>
+              <Card className="border-0 shadow-xl">
+                <CardHeader className="pb-4">
+                  <div className="flex items-start justify-between">
+                    <CardTitle className="text-xl text-foreground">
+                      Property Overview
+                    </CardTitle>
+                    <Badge variant={getStatusVariant(selectedProperty.status)}>
                       {selectedProperty.status}
                     </Badge>
-                  </CardTitle>
+                  </div>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Address</h4>
-                    <p className="text-gray-600">{selectedProperty.address}</p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Construction Year</h4>
-                    <p className="text-gray-600">{selectedProperty.constructionYear}</p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Zoning</h4>
-                    <p className="text-gray-600">{selectedProperty.zoning}</p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Last Updated</h4>
-                    <p className="text-gray-600">{selectedProperty.lastUpdated}</p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Total Updates</h4>
-                    <p className="text-gray-600">{selectedProperty.updates} recorded changes</p>
+                <CardContent className="space-y-6">
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-1">
+                        Address
+                      </h4>
+                      <p className="text-foreground font-medium">{selectedProperty.address}</p>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-1">
+                          Built
+                        </h4>
+                        <p className="text-foreground font-medium">{selectedProperty.constructionYear}</p>
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-1">
+                          Zoning
+                        </h4>
+                        <p className="text-foreground font-medium">{selectedProperty.zoning}</p>
+                      </div>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-1">
+                          Last Updated
+                        </h4>
+                        <p className="text-foreground font-medium">{selectedProperty.lastUpdated}</p>
+                      </div>
+                      
+                      <div>
+                        <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-1">
+                          Updates
+                        </h4>
+                        <p className="text-foreground font-medium">{selectedProperty.updates} changes</p>
+                      </div>
+                    </div>
                   </div>
 
-                  <Button className="w-full mt-4">
-                    View Full History
+                  <Button className="w-full mt-6" size="lg">
+                    View Complete History
                   </Button>
                 </CardContent>
               </Card>
             ) : (
-              <Card>
-                <CardContent className="p-8 text-center">
-                  <MapIcon className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-600 mb-2">
+              <Card className="border-0 shadow-xl">
+                <CardContent className="p-12 text-center">
+                  <div className="bg-muted/50 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6">
+                    <MapIcon className="h-8 w-8 text-muted-foreground" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground mb-3">
                     Select a Property
                   </h3>
-                  <p className="text-gray-500">
-                    Click on a property marker on the map to view its details and history
+                  <p className="text-muted-foreground">
+                    Click on any property marker to explore its detailed records and history
                   </p>
                 </CardContent>
               </Card>

@@ -4,27 +4,24 @@ import { MapIcon, User } from "lucide-react";
 
 const Navigation = () => {
   return (
-    <nav className="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
+    <nav className="bg-background/95 backdrop-blur-sm border-b sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-3">
-            <MapIcon className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold text-gray-900">Cadastrum</span>
+            <MapIcon className="h-8 w-8 text-primary" />
+            <span className="text-xl font-bold text-foreground">Cadastrum</span>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#map" className="text-gray-700 hover:text-blue-600 transition-colors">
+            <a href="#map" className="text-muted-foreground hover:text-primary transition-colors">
               Browse Registry
             </a>
-            <a href="#submit" className="text-gray-700 hover:text-blue-600 transition-colors">
-              Submit Data
-            </a>
-            <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">
+            <a href="/about" className="text-muted-foreground hover:text-primary transition-colors">
               About
             </a>
           </div>
 
-          <Button className="bg-blue-600 hover:bg-blue-700">
+          <Button className="bg-primary hover:bg-primary/90">
             <User className="h-4 w-4 mr-2" />
             Connect Wallet
           </Button>
