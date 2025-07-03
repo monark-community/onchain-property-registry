@@ -8,15 +8,15 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-3">
-            <MapIcon className="h-8 w-8 text-primary" />
+            <MapIcon className="h-8 w-8 text-accent" />
             <span className="text-xl font-bold text-foreground">Cadastrum</span>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#map" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="#map" className="text-muted-foreground hover:text-accent transition-colors">
               Browse Registry
             </a>
-            <a href="/about" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="/about" className="text-muted-foreground hover:text-accent transition-colors">
               About
             </a>
           </div>

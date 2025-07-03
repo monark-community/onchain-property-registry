@@ -90,8 +90,8 @@ const PropertyMap = () => {
                   </div>
                   
                   <div className="text-center z-10">
-                    <div className="bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6">
-                      <MapIcon className="h-8 w-8 text-primary" />
+                    <div className="bg-accent/10 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6">
+                      <MapIcon className="h-8 w-8 text-accent" />
                     </div>
                     <h3 className="text-2xl font-semibold text-foreground mb-3">
                       Interactive Property Browser
@@ -103,10 +103,10 @@ const PropertyMap = () => {
                   
                   {/* Modern property markers */}
                   <div 
-                    className="absolute top-24 left-32 w-3 h-3 bg-primary rounded-full cursor-pointer hover:scale-150 transition-all duration-200 shadow-lg"
+                    className="absolute top-24 left-32 w-3 h-3 bg-accent rounded-full cursor-pointer hover:scale-150 transition-all duration-200 shadow-lg"
                     onClick={() => setSelectedProperty(sampleProperties[0])}
                   >
-                    <div className="absolute inset-0 bg-primary rounded-full animate-ping opacity-75"></div>
+                    <div className="absolute inset-0 bg-accent rounded-full animate-ping opacity-75"></div>
                   </div>
                   <div 
                     className="absolute top-40 right-40 w-3 h-3 bg-secondary rounded-full cursor-pointer hover:scale-150 transition-all duration-200 shadow-lg"

@@ -12,9 +12,9 @@ const Hero = () => {
             Stop getting surprised by hidden property issues
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
             Know What You're Really
-            <span className="block bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">Getting Into</span>
+            <span className="block bg-gradient-to-r from-accent to-accent/60 bg-clip-text text-transparent">Getting Into</span>
           </h1>
           
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
