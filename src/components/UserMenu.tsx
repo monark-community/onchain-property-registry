@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { User, Settings, LogOut, Home, Hammer, Key, ShoppingCart } from "lucide-react";
+import { User, Settings, LogOut } from "lucide-react";
 import { useWallet } from "@/contexts/WalletContext";
 import { useNavigate } from "react-router-dom";
 
@@ -18,21 +18,9 @@ const UserMenu = () => {
 
   if (!user) return null;
 
-  const profileIcons = {
-    buyer: Home,
-    seller: ShoppingCart,
-    developer: Hammer,
-    agent: Key,
-  };
-
   const handleLogout = () => {
     disconnectWallet();
     navigate('/');
-  };
-
-  const handleProfileChange = (profile: typeof user.selectedProfile) => {
-    updateSelectedProfile(profile);
-    navigate('/dashboard');
   };
 
   return (
@@ -51,28 +39,10 @@ const UserMenu = () => {
           </div>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-56">
-        <DropdownMenuLabel>Profile Selection</DropdownMenuLabel>
-        <DropdownMenuItem onClick={() => handleProfileChange('buyer')}>
-          <Home className="mr-2 h-4 w-4" />
-          Property Buyer
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => handleProfileChange('seller')}>
-          <ShoppingCart className="mr-2 h-4 w-4" />
-          Property Seller
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => handleProfileChange('developer')}>
-          <Hammer className="mr-2 h-4 w-4" />
-          Developer
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => handleProfileChange('agent')}>
-          <Key className="mr-2 h-4 w-4" />
-          Real Estate Agent
-        </DropdownMenuItem>
-        <DropdownMenuSeparator />
+      <DropdownMenuContent align="end" className="w-56 bg-popover border border-border shadow-lg z-50">
         <DropdownMenuItem onClick={() => navigate('/profile')}>
           <User className="mr-2 h-4 w-4" />
-          Profile & Preferences
+          Profile
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => navigate('/settings')}>
           <Settings className="mr-2 h-4 w-4" />

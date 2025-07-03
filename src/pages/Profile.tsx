@@ -1,4 +1,4 @@
-import SecondaryNav from "@/components/SecondaryNav";
+import DashboardNav from "@/components/DashboardNav";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,14 +13,19 @@ const Profile = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SecondaryNav title="Profile & Preferences" />
+      <DashboardNav />
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="mb-6">
+          <h1 className="text-2xl font-bold text-foreground">Profile</h1>
+          <p className="text-muted-foreground">Manage your personal information</p>
+        </div>
+
         <div className="grid gap-6">
           <Card>
             <CardHeader>
               <CardTitle>Personal Information</CardTitle>
-              <CardDescription>Update your profile details and preferences</CardDescription>
+              <CardDescription>Update your profile details</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
@@ -42,53 +47,23 @@ const Profile = () => {
 
           <Card>
             <CardHeader>
-              <CardTitle>Notification Preferences</CardTitle>
-              <CardDescription>Choose what notifications you want to receive</CardDescription>
+              <CardTitle>Account Settings</CardTitle>
+              <CardDescription>Manage your account preferences</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <Label>Property Alerts</Label>
-                  <p className="text-sm text-muted-foreground">Get notified about new properties matching your criteria</p>
+                  <Label>Email Notifications</Label>
+                  <p className="text-sm text-muted-foreground">Receive updates via email</p>
                 </div>
                 <Button variant="outline" size="sm">Configure</Button>
               </div>
               <div className="flex items-center justify-between">
                 <div>
-                  <Label>Market Updates</Label>
-                  <p className="text-sm text-muted-foreground">Receive weekly market trend reports</p>
+                  <Label>Two-Factor Authentication</Label>
+                  <p className="text-sm text-muted-foreground">Add an extra layer of security</p>
                 </div>
-                <Button variant="outline" size="sm">Configure</Button>
-              </div>
-              <div className="flex items-center justify-between">
-                <div>
-                  <Label>Community Activity</Label>
-                  <p className="text-sm text-muted-foreground">Updates on community contributions and discussions</p>
-                </div>
-                <Button variant="outline" size="sm">Configure</Button>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Privacy Settings</CardTitle>
-              <CardDescription>Control your data and privacy preferences</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <Label>Public Profile</Label>
-                  <p className="text-sm text-muted-foreground">Make your profile visible to other users</p>
-                </div>
-                <Button variant="outline" size="sm">Enabled</Button>
-              </div>
-              <div className="flex items-center justify-between">
-                <div>
-                  <Label>Data Sharing</Label>
-                  <p className="text-sm text-muted-foreground">Allow anonymized data to improve platform features</p>
-                </div>
-                <Button variant="outline" size="sm">Manage</Button>
+                <Button variant="outline" size="sm">Enable</Button>
               </div>
             </CardContent>
           </Card>
