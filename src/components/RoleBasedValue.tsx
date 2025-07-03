@@ -66,7 +66,7 @@ const RoleBasedValue = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 gap-8">
           {roles.map((role, index) => {
             const IconComponent = role.icon;
             return (
