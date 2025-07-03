@@ -10,9 +10,9 @@ const About = () => {
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             About Cadastrum
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Cadastrum addresses critical challenges in land record management by providing 
-            a transparent, immutable, and community-driven solution for tracking property data.
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            We're building a transparent, community-driven solution that gives everyone 
+            access to complete property information - no more surprises, no more guessing.
           </p>
         </div>
 
