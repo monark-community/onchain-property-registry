@@ -103,19 +103,19 @@ const PropertyMap = () => {
                   
                   {/* Modern property markers */}
                   <div 
-                    className="absolute top-24 left-32 w-3 h-3 bg-accent rounded-full cursor-pointer hover:scale-150 transition-all duration-200 shadow-lg"
+                    className="absolute top-24 left-32 w-4 h-4 bg-accent rounded-full cursor-pointer hover:scale-150 transition-all duration-200 shadow-lg"
                     onClick={() => setSelectedProperty(sampleProperties[0])}
                   >
                     <div className="absolute inset-0 bg-accent rounded-full animate-ping opacity-75"></div>
                   </div>
                   <div 
-                    className="absolute top-40 right-40 w-3 h-3 bg-secondary rounded-full cursor-pointer hover:scale-150 transition-all duration-200 shadow-lg"
+                    className="absolute top-40 right-40 w-4 h-4 bg-secondary rounded-full cursor-pointer hover:scale-150 transition-all duration-200 shadow-lg"
                     onClick={() => setSelectedProperty(sampleProperties[1])}
                   >
                     <div className="absolute inset-0 bg-secondary rounded-full animate-ping opacity-75"></div>
                   </div>
                   <div 
-                    className="absolute bottom-32 left-48 w-3 h-3 bg-destructive rounded-full cursor-pointer hover:scale-150 transition-all duration-200 shadow-lg"
+                    className="absolute bottom-32 left-48 w-4 h-4 bg-destructive rounded-full cursor-pointer hover:scale-150 transition-all duration-200 shadow-lg"
                     onClick={() => setSelectedProperty(sampleProperties[2])}
                   >
                     <div className="absolute inset-0 bg-destructive rounded-full animate-ping opacity-75"></div>

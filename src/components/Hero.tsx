@@ -1,20 +1,20 @@
 
 import { Button } from "@/components/ui/button";
-import { AlertTriangle, CheckCircle, Search, Users, Star } from "lucide-react";
+import { AlertTriangle, CheckCircle, Search, Users, Star, Home, Hammer, Key } from "lucide-react";
 
 const Hero = () => {
   return (
     <div className="bg-gradient-to-br from-background via-secondary/20 to-accent/30 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <div className="inline-flex items-center bg-destructive/10 text-destructive px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
             <AlertTriangle className="h-4 w-4 mr-2" />
             Stop getting surprised by hidden property issues
           </div>
           
           <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
             Know What You're Really
-            <span className="block bg-gradient-to-r from-accent to-accent/60 bg-clip-text text-transparent">Getting Into</span>
+            <span className="block text-accent">Getting Into</span>
           </h1>
           
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
@@ -51,8 +51,8 @@ const Hero = () => {
           {/* Use Cases */}
           <div className="grid md:grid-cols-3 gap-8 mt-8">
             <div className="bg-card border rounded-lg p-6 text-left">
-              <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                🏠
+              <div className="bg-accent/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <Home className="h-6 w-6 text-accent" />
               </div>
               <h3 className="text-lg font-semibold text-card-foreground mb-3">
                 Before You Buy
@@ -68,8 +68,8 @@ const Hero = () => {
             </div>
 
             <div className="bg-card border rounded-lg p-6 text-left">
-              <div className="bg-accent/20 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                🏗️
+              <div className="bg-accent/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <Hammer className="h-6 w-6 text-accent" />
               </div>
               <h3 className="text-lg font-semibold text-card-foreground mb-3">
                 Before You Build
@@ -85,8 +85,8 @@ const Hero = () => {
             </div>
 
             <div className="bg-card border rounded-lg p-6 text-left">
-              <div className="bg-secondary w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                🔍
+              <div className="bg-accent/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <Key className="h-6 w-6 text-accent" />
               </div>
               <h3 className="text-lg font-semibold text-card-foreground mb-3">
                 Before You Rent
