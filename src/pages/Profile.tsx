@@ -42,6 +42,9 @@ const Profile = () => {
                 <Label htmlFor="bio">Bio</Label>
                 <Textarea id="bio" placeholder="Tell us about yourself..." />
               </div>
+              <div className="mt-4 flex justify-end gap-4">
+                <Button>Save Changes</Button>
+              </div>
             </CardContent>
           </Card>
 
@@ -67,11 +70,6 @@ const Profile = () => {
               </div>
             </CardContent>
           </Card>
-
-          <div className="flex justify-end gap-4">
-            <Button variant="outline">Cancel</Button>
-            <Button>Save Changes</Button>
-          </div>
         </div>
       </div>
     </div>
